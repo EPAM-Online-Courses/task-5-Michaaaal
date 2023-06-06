@@ -3,6 +3,8 @@ package efs.task.collections.data;
 import efs.task.collections.entity.Hero;
 import efs.task.collections.entity.Town;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -21,9 +23,9 @@ public class DataProvider {
         for (String text : Data.baseTownsArray){
             String pola[]=text.split(DATA_SEPARATOR);
             List<String> heroesClasses= new ArrayList<>();
-            heroesClasses.add(pola[1]);
-            heroesClasses.add(pola[2]);
-            towns.add(new Town(pola[0],heroesClasses));
+            heroesClasses.add(pola[1].trim());
+            heroesClasses.add(pola[2].trim());
+            towns.add(new Town(pola[0].trim(),heroesClasses));
         }
 
         return towns;
@@ -36,9 +38,9 @@ public class DataProvider {
         for (String text : Data.dlcTownsArray){
             String pola[]=text.split(DATA_SEPARATOR);
             List<String> heroesClasses= new ArrayList<>();
-            heroesClasses.add(pola[1]);
-            heroesClasses.add(pola[2]);
-            dlcTowns.add(new Town(pola[0],heroesClasses));
+            heroesClasses.add(pola[1].trim());
+            heroesClasses.add(pola[2].trim());
+            dlcTowns.add(new Town(pola[0].trim(),heroesClasses));
         }
 
         return dlcTowns;
