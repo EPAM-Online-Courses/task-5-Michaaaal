@@ -1,6 +1,6 @@
 package efs.task.collections.entity;
 
-public class Hero implements Comparable {
+public class Hero {
     private String name;
     private String heroClass;
 
@@ -39,8 +39,4 @@ public class Hero implements Comparable {
         return "My name is " + name + "and I am " + heroClass;
     }
     
-    public int compareTo(Object town) {
-        Town otherTown = (Town) town;
-        return this.getTownName().compareTo(otherTown.getTownName());
-    }
 }
