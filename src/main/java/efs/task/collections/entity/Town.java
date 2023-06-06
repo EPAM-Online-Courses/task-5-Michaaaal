@@ -1,8 +1,9 @@
 package efs.task.collections.entity;
 
 import java.util.List;
+import java.util.Objects;
 
-public class Town implements Comparable {
+public class Town implements Comparable{
     private String townName;
     private List<String> startingHeroClasses;
 
@@ -40,7 +41,7 @@ public class Town implements Comparable {
     public String toString() {
         return "Miasto :" + townName;
     }
-    
+
     public int compareTo(Object town) {
         Town otherTown = (Town) town;
         return this.getTownName().compareTo(otherTown.getTownName());
