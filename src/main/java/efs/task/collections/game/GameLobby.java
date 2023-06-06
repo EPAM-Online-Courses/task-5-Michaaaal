@@ -37,7 +37,7 @@ public class GameLobby {
             }
         }
         playableTownsWithHeroesList.put(t, tmpHeroList);
-    }}
+    }
 
 
     //TODO Usunąć miasta i odpowiadających im bohaterów z DLC gry z mapy dostępnych
