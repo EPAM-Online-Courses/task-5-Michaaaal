@@ -1,6 +1,6 @@
 package efs.task.collections.entity;
 
-public class Hero {
+public class Hero implements Comparable {
     private String name;
     private String heroClass;
 
@@ -37,5 +37,10 @@ public class Hero {
     @Override
     public String toString() {
         return "My name is " + name + "and I am " + heroClass;
+    }
+    
+    public int compareTo(Object town) {
+        Town otherTown = (Town) town;
+        return this.getTownName().compareTo(otherTown.getTownName());
     }
 }
