@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import java.util.*;
+
 public class GameLobby {
 
     public static final String HERO_NOT_FOUND = "Nie ma takiego bohatera ";
@@ -30,13 +32,14 @@ public class GameLobby {
     // miast - playableTownsWithHeroesList, tylko jeżeli jeszcze się na niej nie znajdują.
     public void enableDLC() {
         for (Town t : dataProvider.getDLCTownsList()) {
-        List<Hero> tmpHeroList = new ArrayList<>();
-        for (Hero h : dataProvider.getDLCHeroesSet()) {
-            if (t.getStartingHeroClasses().contains(h.getHeroClass())) {
-                tmpHeroList.add(h);
+            List<Hero> tmpHeroList = new ArrayList<>();
+            for (Hero h : dataProvider.getDLCHeroesSet()) {
+                if (t.getStartingHeroClasses().contains(h.getHeroClass())) {
+                    tmpHeroList.add(h);
+                }
             }
+            playableTownsWithHeroesList.put(t, tmpHeroList);
         }
-        playableTownsWithHeroesList.put(t, tmpHeroList);
     }
 
 
